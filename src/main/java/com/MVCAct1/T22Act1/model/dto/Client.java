@@ -4,11 +4,12 @@ public class Client {
 	
 	//Atributos
 	private int id;
+	private int idSelected;
 	private String name;
 	private String surname;
 	private String address;
 	private String dni;
-	private String date;
+	private String localDate;
 	
 	//Getters and Setters
 	public int getId() {
@@ -41,10 +42,17 @@ public class Client {
 	public void setDni(String dni) {
 		this.dni = dni;
 	}
-	public String getDate() {
-		return date;
+	public String getLocalDate() {
+		return localDate;
 	}
-	public void setDate(String date) {
-		this.date = date;
+	public void setLocalDate(String localDate) {
+		this.localDate = localDate;
+	}
+	public void setIdSelected(int idSelected) {
+		this.idSelected = idSelected;
+	}
+	
+	public int getIdSelected() {
+		return idSelected;
 	}
 }

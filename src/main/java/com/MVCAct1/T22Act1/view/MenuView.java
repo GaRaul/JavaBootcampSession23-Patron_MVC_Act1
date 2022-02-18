@@ -42,16 +42,16 @@ public class MenuView extends JFrame implements ActionListener {
 		btnSearch.setText("Search");
 
 		lblTitle = new JLabel();
-		lblTitle.setText("MVC PATRON");
-		lblTitle.setBounds(60, 40, 380, 30);
+		lblTitle.setText("MVC DESIGN PATRON");
+		lblTitle.setBounds(141, 38, 380, 30);
 		lblTitle.setFont(new java.awt.Font("Verdana", 1, 15));
 
 		lblSelection = new JLabel();
-		lblSelection.setText("What option do you want to do?");
-		lblSelection.setBounds(75, 240, 250, 25);
+		lblSelection.setText("CHOOSE AN OPTION");
+		lblSelection.setBounds(171, 241, 250, 25);
 
-		textoIntroduccion = "This application shows a practical example of design MVC.\n\n"
-				+ "The application allows to register, update, search and delete registers from a Client table.";
+		textoIntroduccion = "This application shows a practical example of MVC design Patron.\n\n"
+				+ "The application allows to register, search, modify and delete registers from a Clients database.";
 
 		areaIntroduction = new JTextArea();
 		areaIntroduction.setBounds(50, 90, 380, 140);
@@ -65,17 +65,17 @@ public class MenuView extends JFrame implements ActionListener {
 
 		btnRegister.addActionListener(this);
 		btnSearch.addActionListener(this);
-		add(btnSearch);
-		add(btnRegister);
-		add(lblSelection);
-		add(lblTitle);
-		add(areaIntroduction);
+		getContentPane().add(btnSearch);
+		getContentPane().add(btnRegister);
+		getContentPane().add(lblSelection);
+		getContentPane().add(lblTitle);
+		getContentPane().add(areaIntroduction);
 
 		setSize(480, 350);
-		setTitle("Patron Disgn/MVC");
+		setTitle("CLIENTS DATABASE");
 		setLocationRelativeTo(null);
 		setResizable(false);
-		setLayout(null);
+		getContentPane().setLayout(null);
 	}
 
 	public void setCoordinator(ClientController clientController) {

@@ -8,8 +8,8 @@ public class MysqlConnection {
 	
 	static String bd = "Clients";
 	static String login = "remote";
-	static String password = "Remote.123";
-	static String url = "jdbc:mysql://192.168.1.137:3306/" + bd + "?useTimezone=true&serverTimezone=UTC";
+	static String password = "Remote.2103";
+	static String url = "jdbc:mysql://192.168.0.17:3306/" + bd + "?useTimezone=true&serverTimezone=UTC";
 
 	Connection conn = null;
 
@@ -22,7 +22,7 @@ public class MysqlConnection {
 			conn = DriverManager.getConnection(url, login, password);
 
 			if (conn != null) {
-				System.out.print("Conexión a base de datos " + bd + "_SUCCESS at");				
+				System.out.print("Conexión a base de datos " + bd + "_SUCCESS at ");				
 			}
 		} catch (SQLException e) {
 			System.out.println(e);

@@ -19,7 +19,7 @@ public class ClientServ {
 	// Metodo que valida los datos de Registro antes de pasar estos al DAO
 	public void validateRegister(Client myClient) {
 		ClientDao myClientDao;
-		if (myClient.getId() > 99) {
+		if (myClient.getDni().length() > 3) {
 			myClientDao = new ClientDao();
 			myClientDao.registerClient(myClient);
 		} else {
@@ -34,12 +34,12 @@ public class ClientServ {
 
 		try {
 			int id = Integer.parseInt(idClient);//mirar
-			if (id > 99) {
+			if (id >= 0 || id <= 200) {
 				myClientDao = new ClientDao();
 				consultClient = true;
 				return myClientDao.searchClient(id);
 			} else {
-				JOptionPane.showMessageDialog(null, "The client's document must have more than 3 digits",
+				JOptionPane.showMessageDialog(null, "The client's id must be between 1-200",
 						"Warning", JOptionPane.WARNING_MESSAGE);
 				consultClient = false;
 			}
@@ -58,12 +58,12 @@ public class ClientServ {
 	// Metodo que valida los datos de Modificación antes de pasar estos al DAO
 	public void validateModification(Client myClient) {
 		ClientDao myClientDao;
-		if (myClient.getName().length() > 5) {
+		if (myClient.getName().length() > 3) {
 			myClientDao = new ClientDao();
 			myClientDao.modifyClient(myClient);
 			modifyClient = true;
 		} else {
-			JOptionPane.showMessageDialog(null, "The client's name must have more than 5 digits", "Warning",
+			JOptionPane.showMessageDialog(null, "The client's name must have more than 3 digits", "Warning",
 					JOptionPane.WARNING_MESSAGE);
 			modifyClient = false;
 		}
