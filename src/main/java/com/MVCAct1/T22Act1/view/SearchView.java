@@ -94,18 +94,22 @@ public class SearchView extends JFrame implements ActionListener {
 
 		textSurname = new JTextField();
 		textSurname.setBounds(300, 120, 144, 25);
+		textSurname.setEditable(false);
 		getContentPane().add(textSurname);
 
 		textAddress = new JTextField();
 		textAddress.setBounds(255, 160, 189, 25);
+		textAddress.setEditable(false);
 		getContentPane().add(textAddress);
 
 		textDni = new JTextField();
 		textDni.setBounds(61, 160, 109, 25);
+		textDni.setEditable(false);
 		getContentPane().add(textDni);
 
 		textDate = new JTextField();
 		textDate.setBounds(340, 80, 104, 25);
+		textDate.setEditable(false);
 		getContentPane().add(textDate);
 
 		btnModify.addActionListener(this);
@@ -159,6 +163,7 @@ public class SearchView extends JFrame implements ActionListener {
 
 		if (e.getSource() == btnSearch) {
 			Client myClient = clientController.searchClient(textId.getText());
+
 			if (myClient != null) {
 				showClient(myClient);
 			} else if (ClientServ.consultClient == true) {
@@ -202,7 +207,7 @@ public class SearchView extends JFrame implements ActionListener {
 		textAddress.setText(myClient.getAddress() + "");
 		textDni.setText(myClient.getDni() + "");
 		textDate.setText(myClient.getLocalDate());
-		habilita(true, true, true, true, true, true, false, false, true, false);
+		habilita(true, true, false, false, false, false, false, false, true, false);
 	}
 
 	/**
@@ -215,7 +220,7 @@ public class SearchView extends JFrame implements ActionListener {
 		textAddress.setText("");
 		textDni.setText("");
 		textDate.setText("");
-		habilita(true, true, true, true, true, true, false, false, false, false);
+		habilita(true, true, false, false, false, false, false, false, false, false);
 	}
 
 	/**

@@ -17,7 +17,7 @@ public class ClientDao {
 
 		try {
 			Statement st = conex.getConnection().createStatement();
-			String sql = "INSERT INTO Client VALUES ('" + myClient.getId() + "','" + myClient.getDni() + "','" + myClient.getName() + "', '" + myClient.getSurname() + "', '" + myClient.getAddress() + "', '"+ myClient.getLocalDate() + "');";
+			String sql = "INSERT INTO Client (dni, name, surname, address, date) VALUES ('" + myClient.getDni() + "','" + myClient.getName() + "', '" + myClient.getSurname() + "', '" + myClient.getAddress() + "', '"+ myClient.getLocalDate() + "');";
 			st.executeUpdate(sql);
 			JOptionPane.showMessageDialog(null, "Client added", "Information", JOptionPane.INFORMATION_MESSAGE);
 			System.out.println(sql);
@@ -41,7 +41,7 @@ public class ClientDao {
 			ResultSet res = consulta.executeQuery();
 			while (res.next()) {
 				existe = true;
-				client.setIdSelected(Integer.parseInt(res.getString("Id")));
+				client.setId(res.getInt(id));
 				client.setName(res.getString("Name"));
 				client.setSurname(res.getString("Surname"));
 				client.setDni(res.getString("Dni"));

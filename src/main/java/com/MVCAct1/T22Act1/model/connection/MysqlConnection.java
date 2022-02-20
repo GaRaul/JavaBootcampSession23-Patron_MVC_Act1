@@ -9,7 +9,7 @@ public class MysqlConnection {
 	static String bd = "Clients";
 	static String login = "remote";
 	static String password = "Remote.2103";
-	static String url = "jdbc:mysql://192.168.0.17:3306/" + bd + "?useTimezone=true&serverTimezone=UTC";
+	static String url = "jdbc:mysql://192.168.0.15:3306/" + bd + "?useTimezone=true&serverTimezone=UTC";
 
 	Connection conn = null;
 

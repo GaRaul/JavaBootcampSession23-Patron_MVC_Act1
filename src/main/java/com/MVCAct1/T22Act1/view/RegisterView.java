@@ -14,9 +14,9 @@ public class RegisterView extends JFrame implements ActionListener {
 	private ClientController clientController; // objeto personaController que permite la relacion entre esta clase y la
 												// clase PersonaController
 	private JLabel lblTitle;
-	private JTextField textName, textSurname, textAddress, textDni, textIdSelected;
+	private JTextField textName, textSurname, textAddress, textDni;
 
-	private JLabel lblId, lblName, lblSurname, lblAddress, lblDni, lblDate, lblLocalDate;
+	private JLabel lblId, lblName, lblSurname, lblAddress, lblDni, lblDate, lblLocalDate, lblIdSelected;
 	private JButton btnSave, btnCancel;
 
 	/**
@@ -76,10 +76,9 @@ public class RegisterView extends JFrame implements ActionListener {
 		lblLocalDate.setText(formattedLocalDate.toString());
 		getContentPane().add(lblLocalDate);
 
-		textIdSelected = new JTextField();
-		textIdSelected.setEditable(false);
-		textIdSelected.setBounds(54, 80, 46, 25);
-		getContentPane().add(textIdSelected);
+		lblIdSelected = new JLabel();
+		lblIdSelected.setBounds(54, 80, 46, 25);
+		getContentPane().add(lblIdSelected);
 
 		textName = new JTextField();
 		textName.setBounds(80, 120, 125, 25);
@@ -133,7 +132,6 @@ public class RegisterView extends JFrame implements ActionListener {
 				myClient.setAddress(textAddress.getText());
 				myClient.setDni(textDni.getText());
 				myClient.setLocalDate(lblLocalDate.getText().toString());
-
 
 				clientController.addClient(myClient);
 			} catch (Exception ex) {
