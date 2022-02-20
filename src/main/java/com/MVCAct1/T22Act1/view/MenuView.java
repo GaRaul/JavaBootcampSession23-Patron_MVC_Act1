@@ -89,7 +89,6 @@ public class MenuView extends JFrame implements ActionListener {
 		}
 		if (e.getSource() == btnSearch) {
 			clientController.showSearchView();
-			;
 		}
 	}
 }
